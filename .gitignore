@@ -1,5 +1,2 @@
-teht0/build/
-teht0/*.user
-
-teht1/build/
-teht1/*.user
+*/*/build/
+*/*/*.user
