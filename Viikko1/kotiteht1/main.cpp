@@ -4,17 +4,35 @@
 
 using namespace std;
 
+
+int guesses = 0;
+int maxnum = 0;
+
 int game(int maxnum);
 
 int main()
 {
+    cout << "--------------------" << endl;
+    cout << "|    ARVAUSPELI    |" << endl;
+    cout << "--------------------" << endl << endl;
+
+    cout << "********************" << endl;
+    cout << "Anna korkein arvottava luku:" << endl;
+    cin >> maxnum;
+
+    cout << "********************" << endl << endl;
+
+    game(maxnum);
+
+    cout << "Arvasit yhteensa " << guesses << " kertaa." << endl << endl;
+
     return 0;
 }
 
 int game(int maxnum){
     //Generate a random number by using time as the seed
-    srand(maxnum);
-    int randomNumber = rand() % 20;
+    srand(time(NULL));
+    int randomNumber = rand() % maxnum;
     randomNumber += 1;
 
     int guessNumber = 0;
@@ -25,17 +43,19 @@ int game(int maxnum){
         cout << "Arvaa luku:" << endl;
         cin >> guessNumber;
         if (guessNumber < randomNumber){
-            cout << "Luku on suurempi." << endl;
+            cout << "Arvattava luku on suurempi." << endl << endl;
+            guesses += 1;
         }
         else if (guessNumber > randomNumber){
-            cout << "Luku on pienempi." << endl;
+            cout << "Arvattava luku on pienempi." << endl << endl;
+            guesses += 1;
         }
     }
 
-    int guesses = 0;
+    guesses += 1;
 
     //Once the number is guessed correctly, a congratulation is printed and the program is closed.
-    cout << "Onneksi olkoon, arvasit oikein!" << endl;
+    cout << endl << "Onneksi olkoon, arvasit oikein!" << endl;
 
     return guesses;
 }
