@@ -4,18 +4,16 @@
 
 using namespace std;
 
-void guessingGame(void);
+int game(int maxnum);
 
 int main()
 {
-    guessingGame();
-
     return 0;
 }
 
-void guessingGame(void){
+int game(int maxnum){
     //Generate a random number by using time as the seed
-    srand(time(NULL));
+    srand(maxnum);
     int randomNumber = rand() % 20;
     randomNumber += 1;
 
@@ -34,6 +32,10 @@ void guessingGame(void){
         }
     }
 
+    int guesses = 0;
+
     //Once the number is guessed correctly, a congratulation is printed and the program is closed.
     cout << "Onneksi olkoon, arvasit oikein!" << endl;
+
+    return guesses;
 }
