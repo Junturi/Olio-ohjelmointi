@@ -12,25 +12,30 @@ int game(int maxnum);
 
 int main()
 {
+    //This program is a simple number guessing game.
+
     cout << "--------------------" << endl;
     cout << "|    ARVAUSPELI    |" << endl;
     cout << "--------------------" << endl << endl;
 
+    //First, we ask the user to set the maximum number to be guessed, adjusting the difficulty of the game.
     cout << "********************" << endl;
     cout << "Anna korkein arvottava luku:" << endl;
     cin >> maxnum;
-
     cout << "********************" << endl << endl;
 
+    //We call for the function game, and give it the maximum number.
     game(maxnum);
 
+    //Once the function game is done and the correct number has been guessed, the user is congratulated and the number of guesses used is printed out.
+    cout << endl << "Onneksi olkoon, arvasit oikein!" << endl;
     cout << "Arvasit yhteensa " << guesses << " kertaa." << endl << endl;
 
     return 0;
 }
 
 int game(int maxnum){
-    //Generate a random number by using time as the seed
+    //Generate a random number by using time as the seed.
     srand(time(NULL));
     int randomNumber = rand() % maxnum;
     randomNumber += 1;
@@ -53,9 +58,6 @@ int game(int maxnum){
     }
 
     guesses += 1;
-
-    //Once the number is guessed correctly, a congratulation is printed and the program is closed.
-    cout << endl << "Onneksi olkoon, arvasit oikein!" << endl;
 
     return guesses;
 }
