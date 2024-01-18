@@ -7,15 +7,15 @@ using namespace std;
 class Game
 {
 public:
-    Game(int y){
-        maxNumber = y;
-    }
+    Game(int);
     ~Game();
+    void play(void);
 
 private:
-    int maxNumber;
-    int playerGuess;
-    int numOfGuesses;
+    int maxNumber = 0;
+    int playerGuess = 0;
+    int numOfGuesses = 0;
+    int randomNumber = 0;
     void printGameResult(void);
 };
 
