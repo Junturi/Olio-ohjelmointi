@@ -9,6 +9,7 @@ class ItalianChef : public Chef
 {
 public:
     ItalianChef(string);
+    ~ItalianChef();
     string getName(void);
     void makePasta(void);
 };

@@ -2,7 +2,8 @@
 
 Chef::Chef(string a)
 {
-    cout << "Chef " << a << " constructor." << endl;
+    name = a;
+    cout << "Chef " << name << " constructor." << endl;
 }
 
 Chef::~Chef()
@@ -18,9 +19,4 @@ void Chef::makeSalad()
 void Chef::makeSoup()
 {
     cout << "Chef " << name << " makes soup." << endl;
-}
-
-void Chef::setName(const string &newName)
-{
-    name = newName;
 }
