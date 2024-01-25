@@ -19,5 +19,5 @@ string ItalianChef::getName()
 
 void ItalianChef::makePasta()
 {
-    cout << "Chef " << name << " makes pasta." << endl;
+    cout << "Chef " << getName() << " makes pasta." << endl;
 }
