@@ -1,11 +1,12 @@
 #ifndef KERROS_H
 #define KERROS_H
 #include "asunto.h"
+#include "iKerros.h"
 #include <iostream>
 
 using namespace std;
 
-class Kerros
+class Kerros : public iKerros
 {
 public:
     Kerros();
@@ -14,8 +15,8 @@ public:
     Asunto as2;
     Asunto as3;
     Asunto as4;
-    virtual void maaritaAsunnot();
-    double laskeKulutus(double);
+    virtual void maaritaAsunnot() override;
+    virtual double laskeKulutus(double hinta) override;
 };
 
 #endif // KERROS_H

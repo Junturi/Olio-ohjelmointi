@@ -1,21 +1,21 @@
 #ifndef KATUTASO_H
 #define KATUTASO_H
 #include "asunto.h"
-#include "kerros.h"
+#include "iKerros.h"
 #include <iostream>
 
 using namespace std;
 
 
-class Katutaso : public Kerros
+class Katutaso : public iKerros
 {
 public:
     Katutaso();
     ~Katutaso();
     Asunto as1;
     Asunto as2;
-    void maaritaAsunnot();
-    double laskeKulutus(double);
+    virtual void maaritaAsunnot() override;
+    virtual double laskeKulutus(double hinta) override;
 };
 
 #endif // KATUTASO_H

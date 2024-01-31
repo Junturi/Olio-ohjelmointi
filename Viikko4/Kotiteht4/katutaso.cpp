@@ -2,7 +2,7 @@
 
 Katutaso::Katutaso()
 {
-
+    cout << "Katutaso luotu." << endl;
 }
 
 Katutaso::~Katutaso()
@@ -12,9 +12,13 @@ Katutaso::~Katutaso()
 
 void Katutaso::maaritaAsunnot()
 {
+    cout << "Maaritellaan kaksi asuntoa katutasoon:" << endl;
+    as1.maarita(2,100);
+    as2.maarita(2,100);
 }
 
-double Katutaso::laskeKulutus(double d)
+double Katutaso::laskeKulutus(double hinta)
 {
-    return 1;
+    double katutasoKulutus = as1.laskeKulutus(hinta)+as2.laskeKulutus(hinta);
+    return katutasoKulutus;
 }

@@ -12,6 +12,7 @@ SOURCES += \
 
 HEADERS += \
     asunto.h \
+    iKerros.h \
     katutaso.h \
     kerros.h \
     kerrostalo.h
