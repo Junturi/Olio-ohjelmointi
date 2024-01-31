@@ -5,11 +5,6 @@ Katutaso::Katutaso()
     cout << "Katutaso luotu." << endl;
 }
 
-Katutaso::~Katutaso()
-{
-
-}
-
 void Katutaso::maaritaAsunnot()
 {
     cout << "Maaritellaan kaksi asuntoa katutasoon:" << endl;

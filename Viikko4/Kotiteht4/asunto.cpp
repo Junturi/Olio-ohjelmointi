@@ -5,11 +5,6 @@ Asunto::Asunto()
     cout << "Asunto luotu." << endl;
 }
 
-Asunto::~Asunto()
-{
-
-}
-
 void Asunto::maarita(int a, int b)
 {
     asukasMaara = a;

@@ -10,13 +10,13 @@ class Kerros : public iKerros
 {
 public:
     Kerros();
-    ~Kerros();
+    virtual void maaritaAsunnot() override;
+    virtual double laskeKulutus(double hinta) override;
+private:
     Asunto as1;
     Asunto as2;
     Asunto as3;
     Asunto as4;
-    virtual void maaritaAsunnot() override;
-    virtual double laskeKulutus(double hinta) override;
 };
 
 #endif // KERROS_H
