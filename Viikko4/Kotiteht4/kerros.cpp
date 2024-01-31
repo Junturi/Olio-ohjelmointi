@@ -15,7 +15,7 @@ void Kerros::maaritaAsunnot()
 
 }
 
-double Kerros::laskeKulutus(double)
+double Kerros::laskeKulutus(double e)
 {
     return 1;
 }
