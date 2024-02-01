@@ -18,6 +18,6 @@ void Kerros::maaritaAsunnot()
 
 double Kerros::laskeKulutus(double hinta)
 {
-    double kerrosKulutus = as1.laskeKulutus(hinta) +as2.laskeKulutus(hinta)+as3.laskeKulutus(hinta)+as4.laskeKulutus(hinta);
+    double kerrosKulutus = as1.laskeKulutus(hinta) + as2.laskeKulutus(hinta) + as3.laskeKulutus(hinta) + as4.laskeKulutus(hinta);
     return kerrosKulutus;
 };

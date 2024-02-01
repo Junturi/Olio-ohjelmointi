@@ -1,3 +1,4 @@
+
 #include "asunto.h"
 
 Asunto::Asunto()
@@ -15,6 +16,5 @@ void Asunto::maarita(int a, int b)
 double Asunto::laskeKulutus(double c)
 {
     double asuntoKulutus = c*asukasMaara*neliot;
-    cout << "Asunnon kulutus, kun hinta = " << c << " on " << asuntoKulutus << endl;
     return asuntoKulutus;
 }

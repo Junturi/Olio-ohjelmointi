@@ -1,5 +1,4 @@
-#include "katutaso.h"
-#include "kerros.h"
+#include "kerrostalo.h"
 #include <iostream>
 
 using namespace std;
@@ -7,18 +6,10 @@ using namespace std;
 int main()
 {
     double hinta = 1;
-    Kerros objkerros;
-    Katutaso objkatutaso;
-    objkerros.maaritaAsunnot();
-    objkatutaso.maaritaAsunnot();
+    Kerrostalo objtalo;
+    double taloKulutus = objtalo.laskeKulutus(hinta);
 
-    auto katutasoKulutus = objkatutaso.laskeKulutus(hinta);
-    cout << "Katutason kulutus, kun hinta = " << hinta << " on " << katutasoKulutus << endl;
-
-    auto kerroskulutus = objkerros.laskeKulutus(hinta);
-    cout << "Kerroksen kulutus, kun hinta = " << hinta << " on " << kerroskulutus << endl;
-
-    cout << "Katutason ja kerroksen kulutus yhteensa, kun hinta = " << hinta << " on " << kerroskulutus+katutasoKulutus << endl;
+    cout << "Kerrostalon kulutus yhteensa, kun hinta = " << hinta << " on " << taloKulutus << endl;
 
     return 0;
 }
