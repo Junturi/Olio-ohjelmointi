@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    double hinta = 1;
+    double hinta = 3;
     Kerrostalo objtalo;
     double taloKulutus = objtalo.laskeKulutus(hinta);
 
