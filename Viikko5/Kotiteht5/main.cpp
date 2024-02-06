@@ -1,32 +1,19 @@
 #include "kerrostalo.h"
-#include "kerros.h"
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    Kerros *objKerros;
-    objKerros = new Kerros;
-    objKerros->maaritaAsunnot();
-    objKerros->laskeKulutus(1);
-    delete objKerros;
-    objKerros = nullptr;
+    double hinta = 1;
+    Kerrostalo *objtalo;
+    objtalo = new Kerrostalo;
+    double taloKulutus = objtalo->laskeKulutus(hinta);
 
-    Katutaso *objKatutaso;
-    objKatutaso = new Katutaso;
-    objKatutaso->maaritaAsunnot();
-    objKatutaso->laskeKulutus(1);
-    delete objKatutaso;
-    objKatutaso = nullptr;
+    cout << "Kerrostalon kulutus yhteensa, kun hinta = " << hinta << " on " << taloKulutus << endl;
 
-
-    /*
-    double hinta = 3;
-    Kerrostalo objtalo;
-    double taloKulutus = objtalo.laskeKulutus(hinta);
-
-    cout << "Kerrostalon kulutus yhteensa, kun hinta = " << hinta << " on " << taloKulutus << endl;*/
+    delete objtalo;
+    objtalo = nullptr;
 
     return 0;
 }

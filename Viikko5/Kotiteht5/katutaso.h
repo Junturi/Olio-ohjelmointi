@@ -11,7 +11,7 @@ class Katutaso : public iKerros
 {
 public:
     Katutaso();
-    ~Katutaso();
+    virtual ~Katutaso();
     virtual void maaritaAsunnot() override;
     virtual double laskeKulutus(double hinta) override;
 private:

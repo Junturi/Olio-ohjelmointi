@@ -10,7 +10,7 @@ class Kerros : public iKerros
 {
 public:
     Kerros();
-    ~Kerros();
+    virtual ~Kerros();
     virtual void maaritaAsunnot() override;
     virtual double laskeKulutus(double hinta) override;
 private:
