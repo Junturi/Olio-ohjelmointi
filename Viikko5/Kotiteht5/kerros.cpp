@@ -10,9 +10,13 @@ Kerros::~Kerros()
 {
     cout << "Kerros tuhottu" << endl;
     delete as1;
+    as1 = nullptr;
     delete as2;
+    as2 = nullptr;
     delete as3;
+    as3 = nullptr;
     delete as4;
+    as4 = nullptr;
 }
 
 void Kerros::maaritaAsunnot()

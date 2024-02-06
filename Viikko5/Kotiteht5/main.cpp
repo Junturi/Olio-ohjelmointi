@@ -11,6 +11,15 @@ int main()
     objKerros->maaritaAsunnot();
     objKerros->laskeKulutus(1);
     delete objKerros;
+    objKerros = nullptr;
+
+    Katutaso *objKatutaso;
+    objKatutaso = new Katutaso;
+    objKatutaso->maaritaAsunnot();
+    objKatutaso->laskeKulutus(1);
+    delete objKatutaso;
+    objKatutaso = nullptr;
+
 
     /*
     double hinta = 3;

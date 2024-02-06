@@ -11,11 +11,12 @@ class Katutaso : public iKerros
 {
 public:
     Katutaso();
+    ~Katutaso();
     virtual void maaritaAsunnot() override;
     virtual double laskeKulutus(double hinta) override;
 private:
-    Asunto as1;
-    Asunto as2;
+    Asunto * as1;
+    Asunto * as2;
 };
 
 #endif // KATUTASO_H

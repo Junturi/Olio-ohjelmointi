@@ -6,13 +6,13 @@
 
 using namespace std;
 
-class Kerros //: public iKerros
+class Kerros : public iKerros
 {
 public:
     Kerros();
     ~Kerros();
-    void maaritaAsunnot();
-    double laskeKulutus(double hinta);
+    virtual void maaritaAsunnot() override;
+    virtual double laskeKulutus(double hinta) override;
 private:
     Asunto * as1;
     Asunto * as2;
