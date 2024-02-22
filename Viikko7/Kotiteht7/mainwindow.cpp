@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
     //Create a new object from heap
     pQTimer = new QTimer();
 
+    //Initialise the clock by connecting pQTimer signal to timeout function
+    connect (pQTimer, SIGNAL(timeout()), this, SLOT(timeout()));
+
     //Adjust progress bar settings:
     //Select the format so that the numbers next to the bar show current value and max value instead of percentage
     ui->barPlayer1->setFormat("%v/%m");
@@ -35,7 +38,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::timeout()
 {
-    //Check which player is currently playing and update corresponding progress bar
+    //Check which player is currently playing and call the function updateProgressBar
     if (currentPlayer == 1){
         player1Time--;
         updateProgressBar();
@@ -106,8 +109,6 @@ void MainWindow::on_btnStart_clicked()
     player1Time = gameTime;
     player2Time = gameTime;
 
-    //Initialise the clock by connecting pQTimer signal to timeout function
-    connect (pQTimer, SIGNAL(timeout()), this, SLOT(timeout()));
     //Start the clock. Generate a tick once per second.
     pQTimer->start(1000);
 
@@ -117,10 +118,8 @@ void MainWindow::on_btnStart_clicked()
 
 void MainWindow::on_btnReset_clicked()
 {
-    //Stop the clock and disconnect the signal
-    //If signal is not disconnected, the clock will generate additional ticks per second
+    //Stop the clock
     pQTimer->stop();
-    pQTimer->disconnect();
 
     //Set the progress bar values to 0
     ui->barPlayer1->setValue(0);
@@ -138,18 +137,16 @@ void MainWindow::updateProgressBar()
     ui->barPlayer2->setValue(player2Time);
 
     //If either player time reaches 0, the game ends
-    //Stop and disconnect the clock and set progress bars to 0
+    //Stop the clock and set progress bars to 0
     if (player1Time == 0){
         pQTimer->stop();
-        pQTimer->disconnect();
         ui->barPlayer1->setValue(0);
         ui->barPlayer2->setValue(0);
         setGameInfoText("Game over! Player 2 won!",24);
     }
     else if (player2Time == 0){
-        setGameInfoText("Game over! Player 1 won!",14);
+        setGameInfoText("Game over! Player 1 won!",24);
         pQTimer->stop();
-        pQTimer->disconnect();
         ui->barPlayer1->setValue(0);
         ui->barPlayer2->setValue(0);
     }
@@ -159,6 +156,7 @@ void MainWindow::updateProgressBar()
 void MainWindow::setGameInfoText(QString text, short fontSize)
 {
     //Adjust the font size
+    //setFont function accepts only QFont variables, so we need to transfrom the short fontSize into on
     QFont font;
     font.setPointSize(fontSize);
     ui->labelText->setFont(font);
